@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practical components</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* .modal {
+            transition: opacity 0.25s ease;
+        }
+    
+        body.modal-active {
+            overflow-x: hidden;
+            overflow-y: visible !important;
+        } */
+    </style>
+</head>
+<body>
+
+    <div id="root" class="max-w-3xl m-auto mt-10">
+
+        <button v-on:click="showModal = true"
+            class="modal-open bg-transparent border border-gray-500 hover:border-indigo-500 text-gray-500 hover:text-indigo-500 font-bold py-2 px-4 rounded-full">Open
+            Modal</button>
+        
+        <!--Modal-->
+        <modal v-if="showModal" v-on:close="showModal = false" title="Simple Modal!!!!">
+            <p>Modal content can go here Modal content can go here Modal content can go here Modal content can go here</p>
+        </modal>
+    </div>
+    
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Attribute class binding</title>
+    <style>
+        .headding{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root">
+
+        <h1 v-model="message">{{ reversedMessage }}</h1>
+
+        <h1>All Tasks</h1>
+        <ul>
+            <li v-for="task in tasks">{{ task.description }}</li>
+        </ul>
+        <hr>
+        <h1>Incomplete Tasks</h1>
+        <ul>
+            <li v-for="task in incompleteTasks">{{ task.description }}</li>
+        </ul>
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+
+    <script>
+        var app = new Vue({
+            el : '#root',
+            data: {
+                message: 'lorem',
+                tasks: [
+                    {description: 'Go to the store', completed: true},
+                    {description: 'Finish Screencast', completed: false},
+                    {description: 'Make Donation', completed: false},
+                    {description: 'Clear inbox', completed: false},
+                    {description: 'Make dinner', completed: false},
+                    {description: 'Clean Room', completed: true},
+                ]
+            },
+            computed: {
+                reversedMessage(){
+                    return this.message.split('').reverse().join('');
+                },
+                incompleteTasks(){
+                    return this.tasks.filter( task => !task.completed );
+                }
+            },
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Attribute class binding</title>
+    <style>
+        .headding{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root">
+        <h1 v-bind:class="className">Lorem ipsum</h1>
+
+        <h1 :class="{'headding' : heading}">Change color</h1>
+
+        <button v-bind:title="title" v-on:click="toggleClass" v-bind:disabled="isDisabled">Change Color</button>
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+
+    <script>
+        var app = new Vue({
+            el : '#root',
+            data: {
+                title: 'lorem',
+                className: 'headding',
+                heading: false,
+                isDisabled: false
+            },
+            methods: {
+                toggleClass(){
+                    this.heading = !this.heading;
+                    this.isDisabled = true;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
