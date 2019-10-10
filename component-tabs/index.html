@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practical components</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* .modal {
+            transition: opacity 0.25s ease;
+        }
+    
+        body.modal-active {
+            overflow-x: hidden;
+            overflow-y: visible !important;
+        } */
+    </style>
+</head>
+<body>
+
+    <div id="root" class="max-w-3xl m-auto mt-10">
+        <tabs>
+            <tab name="About us" :selected="true">
+                <h1>Content for about us</h1>
+            </tab>
+            <tab name="About out team">
+                <h1>Content for about team</h1>
+            </tab>
+            <tab name="About out company investor">
+                <h1>Content for about investor</h1>
+            </tab>
+            <tab name="About out company sda">
+                <h1>Content for about investor</h1>
+            </tab>
+        </tabs>
+    </div>
+    
+    <script src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
